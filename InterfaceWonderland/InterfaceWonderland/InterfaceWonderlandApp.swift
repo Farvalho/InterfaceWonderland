@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct InterfaceWonderlandApp: App {
+    
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }
